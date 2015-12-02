@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>motd</title>
+    <!-- link this part of page to css file. If not in the same directory/folder, need to include under href -->
+    <link rel="stylesheet" href="motd.css">
   </head>
   <body>
     <h1>Hi</h1>
+    <button>Type your MOTD</button>
 
     <script type="text/javascript">
     //get the motd from server.js
@@ -20,6 +23,12 @@
             motd.textContent = message
         })
       })
+      function promptMOTD () {
+        var motd = window.prompt('Type your message.')
+
+      }
+      var button = document.querySelector('button')
+      button.addEventListener('click', promptMOTD, false)
     </script>
   </body>
 </html>
