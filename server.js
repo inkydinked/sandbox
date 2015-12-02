@@ -2,12 +2,10 @@ var express = require('express')
 var app = express()
 
 var message = 'How are you today?!!'
+//pulling info from Public folder - serve static files
+app.use(express.static('public'))
 
-app.get('/', function (req, res) {
-  res.send(message)
-})
-
-app.get('/xyz', function (req, res) {
+app.get('/motd', function (req, res) {
   res.send(message)
 })
 

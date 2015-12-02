@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>motd</title>
+  </head>
+  <body>
+    <h1>Hi</h1>
+
+    <script type="text/javascript">
+    //get the motd from server.js
+      fetch('/motd')
+        .then(function (response) {
+          //translate response into text
+          response.text()
+          .then(function (message) {
+            //use the text response received and input into h1 found in this document
+            var motd = document.querySelector('h1')
+            console.log(message)
+            motd.textContent = message
+        })
+      })
+    </script>
+  </body>
+</html>
